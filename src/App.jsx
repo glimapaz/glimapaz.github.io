@@ -1,7 +1,8 @@
 import "./index.css";
 import { EXPERIENCES } from "./data/experience";
+import { PATENTS } from "./data/patents";
 import ExperienceItem from "./components/ExperienceItem";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import PatentItem from "./components/PatentItem";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
         </div>
       </header>
 
-      <main className="container grid">
+      <main className="container grid" id="home">
         {/* LEFT */}
         <section className="left">
           <p className="intro">
@@ -32,13 +33,13 @@ export default function App() {
 
           <div className="social">
             <a href="https://www.linkedin.com/in/gabrielrlp" target="_blank" rel="noreferrer">
-              <FiLinkedin /> <span>LinkedIn</span>
+              <img src="/linkedin.png" alt="LinkedIn" className="social-icon" /> <span>LinkedIn</span>
             </a>
             <a href="https://github.com/glimapaz" target="_blank" rel="noreferrer">
-              <FiGithub /> <span>GitHub</span>
+              <img src="/github.png" alt="GitHub" className="social-icon" /> <span>GitHub</span>
             </a>
             <a href="mailto:gabriel@yourdomain.com">
-              <FiMail /> <span>Email</span>
+              <img src="/email.png" alt="Email" className="social-icon" /> <span>Email</span>
             </a>
           </div>
         </section>
@@ -49,6 +50,13 @@ export default function App() {
           <div className="xp-list">
             {EXPERIENCES.map((e) => (
               <ExperienceItem key={e.id} item={e} />
+            ))}
+          </div>
+
+          <h2 className="h2" id="patents" style={{ marginTop: 28 }}>Patents</h2>
+          <div className="patent-list">
+            {PATENTS.map((p) => (
+              <PatentItem key={p.id} item={p} />
             ))}
           </div>
         </section>

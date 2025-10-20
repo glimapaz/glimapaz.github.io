@@ -39,8 +39,16 @@ body {
   gap: 24px;
   height:56px
 }
+.topbar .container { /* Header full-width, flush-left with 4px inward padding */
+  max-width:100%;
+  width:100%;
+  margin:0; /* remove auto-centering */
+  padding-left:12px;
+  padding-right:24px; /* keep some right spacing */
+}
 .brand{
-  font-weight:600
+  font-weight:400; /* normal weight */
+  font-size:20px; /* slightly larger */
 }
 .nav a{
   color:var(--muted);
@@ -53,7 +61,7 @@ body {
 .brand{min-width: max-content;}
 
 /* Grid */
-.grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;padding:40px 0}
+.grid{display:grid;grid-template-columns:1fr 1.2fr;gap:120px;padding:60px 0}
 @media (max-width: 920px){.grid{grid-template-columns:1fr;gap:28px}}
 
 /* Left column */
@@ -62,6 +70,7 @@ body {
 .social{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
 .social a{display:inline-flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none}
 .social a:hover{color:var(--fg)}
+.social-icon {width:18px;height:18px;display:block;object-fit:contain}
 
 /* Right column */
 .h2{font-size:32px;margin:8px 0 20px}
@@ -127,4 +136,51 @@ body {
 
 .xp-item:hover .xp-row {
   transform: translateX(4px);
+}
+
+/* Patents */
+.patent-list {
+  border-top: 1px solid var(--line);
+}
+.patent-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 14px 8px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--line);
+  transition: background-color .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+.patent-item:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  transform: translateX(4px);
+}
+.patent-number { font-weight: 600; }
+.patent-title { color: var(--muted); font-size: var(--font-sm); }
+.patent-year { color: var(--muted); font-size: var(--font-sm); align-self: center; }
+
+/* Patent icon styling */
+.patent-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.patent-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.patent-icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
 }

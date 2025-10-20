@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="520" height="680" viewBox="0 0 520 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ícone estilizado de placa de patente">
+  <!-- ======= Defs ======= -->
+  <defs>
+    <!-- madeira escura -->
+    <linearGradient id="woodGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"  stop-color="#5b3e2b"/>
+      <stop offset="1"  stop-color="#3f2a1e"/>
+    </linearGradient>
+    <!-- brilho sutil da madeira -->
+    <linearGradient id="woodSheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#000" stop-opacity="0.0"/>
+      <stop offset="0.45" stop-color="#fff" stop-opacity="0.06"/>
+      <stop offset="0.55" stop-color="#fff" stop-opacity="0.06"/>
+      <stop offset="1"   stop-color="#000" stop-opacity="0.0"/>
+    </linearGradient>
+    <!-- metal dourado vertical -->
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#f4d79c"/>
+      <stop offset="0.25" stop-color="#e7bf78"/>
+      <stop offset="0.5" stop-color="#d4a45a"/>
+      <stop offset="0.75" stop-color="#e7bf78"/>
+      <stop offset="1"   stop-color="#b8873e"/>
+    </linearGradient>
+    <!-- borda dourada escurecida -->
+    <linearGradient id="goldEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#8a612b"/>
+      <stop offset="1"   stop-color="#5f401d"/>
+    </linearGradient>
+    <!-- sombra suave -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.22"/>
+    </filter>
+    <!-- linhas de “texto” (placa) -->
+    <symbol id="textLine" viewBox="0 0 100 6" overflow="visible">
+      <rect x="0" y="0" width="100" height="6" rx="3" ry="3" fill="#243139" opacity="0.9"/>
+    </symbol>
+    <!-- microtexto (linhas finas) -->
+    <symbol id="microLine" viewBox="0 0 100 3" overflow="visible">
+      <rect x="0" y="0" width="100" height="3" rx="1.5" ry="1.5" fill="#2f3a3f" opacity="0.65"/>
+    </symbol>
+    <!-- selo circular simplificado -->
+    <symbol id="seal" viewBox="0 0 120 120">
+      <defs>
+        <radialGradient id="sealGrad" cx="0.35" cy="0.35" r="0.85">
+          <stop offset="0"   stop-color="#f2d28c"/>
+          <stop offset="0.6" stop-color="#c8974c"/>
+          <stop offset="1"   stop-color="#8f632e"/>
+        </radialGradient>
+      </defs>
+      <circle cx="60" cy="60" r="56" fill="url(#sealGrad)" stroke="#583913" stroke-width="4"/>
+      <circle cx="60" cy="60" r="46" fill="none" stroke="#3b2a16" stroke-width="2" stroke-dasharray="4 5"/>
+      <!-- águia/brasão abstrato -->
+      <g fill="none" stroke="#2b2b2b" stroke-width="3" stroke-linecap="round">
+        <path d="M30 70 Q60 40 90 70"/>
+        <path d="M60 40 v35"/>
+        <path d="M50 75 h20"/>
+      </g>
+      <circle cx="60" cy="60" r="6" fill="#2b2b2b"/>
+    </symbol>
+  </defs>
+
+  <!-- ======= Base madeira com moldura ======= -->
+  <!-- moldura externa preta -->
+  <rect x="10" y="10" width="500" height="660" rx="18" fill="#121212"/>
+  <!-- fundo madeira -->
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="480" height="640" rx="16" fill="url(#woodGrad)"/>
+    <rect x="0" y="0" width="480" height="640" rx="16" fill="url(#woodSheen)"/>
+    <!-- moldura interna (filete preto) -->
+    <rect x="12" y="12" width="456" height="616" rx="12" fill="none" stroke="#141414" stroke-width="6"/>
+    <!-- faixas verticais à esquerda -->
+    <g transform="translate(28,140)" stroke="#141414">
+      <rect x="0" y="-110" width="6" height="560" fill="#141414"/>
+      <rect x="14" y="-110" width="6" height="560" fill="#141414"/>
+      <rect x="28" y="-110" width="6" height="560" fill="#141414"/>
+    </g>
+
+    <!-- ======= Título superior ======= -->
+    <g transform="translate(270,58)">
+      <rect x="-140" y="-30" width="280" height="54" rx="6" fill="#141414" opacity="0.95"/>
+      <g transform="translate(0,0) scale(1,1)">
+        <!-- “United States Patent” (como barras para evitar dependência de fonte) -->
+        <use href="#textLine" x="-120" y="-14" width="240" height="12"/>
+        <use href="#microLine" x="-90"  y="6"   width="180" height="6" />
+      </g>
+    </g>
+
+    <!-- ======= Placa dourada central ======= -->
+    <g transform="translate(120,120)" filter="url(#softShadow)">
+      <!-- borda -->
+      <rect x="0" y="0" width="280" height="440" rx="8" fill="url(#goldEdge)"/>
+      <!-- metal -->
+      <rect x="6" y="6" width="268" height="428" rx="6" fill="url(#gold)"/>
+      <!-- cabeçalho da placa -->
+      <g transform="translate(20,24)">
+        <use href="#textLine" width="220" height="10"/>
+        <use href="#microLine" y="16" width="160" height="6"/>
+      </g>
+
+      <!-- “documento” (desenhos e linhas) -->
+      <g transform="translate(20,70)">
+        <!-- bloco claro simulando papel -->
+        <rect x="0" y="0" width="240" height="240" rx="4" fill="#f7f4ea" opacity="0.92" stroke="#c9b07b" stroke-width="1.5"/>
+        <!-- linhas de texto -->
+        <g transform="translate(12,12)">
+          <use href="#microLine" width="200"/>
+          <use href="#microLine" y="10" width="210"/>
+          <use href="#microLine" y="20" width="180"/>
+          <use href="#microLine" y="30" width="220"/>
+          <use href="#microLine" y="40" width="195"/>
+        </g>
+        <!-- “diagramas” simplificados -->
+        <g transform="translate(24,76)" stroke="#2f3a3f" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9">
+          <rect x="0" y="0" width="60" height="46" rx="6"/>
+          <path d="M60 23 H86 V0" />
+          <rect x="96" y="-6" width="60" height="46" rx="6"/>
+          <path d="M126 40 V66 H52" />
+          <rect x="24" y="66" width="60" height="46" rx="6"/>
+        </g>
+      </g>
+
+      <!-- selo + texto inferior -->
+      <g transform="translate(20,328)">
+        <use href="#textLine" width="180" height="10"/>
+        <use href="#microLine" y="16" width="220" height="6"/>
+      </g>
+
+      <!-- assinatura (direita) -->
+      <g transform="translate(160,392)">
+        <path d="M0 28 C18 6, 36 46, 60 10 C78 0, 98 24, 108 6" fill="none" stroke="#2b2b2b" stroke-width="2" />
+        <use href="#microLine" y="36" width="110" height="6"/>
+      </g>
+    </g>
+
+    <!-- ======= Selo no rodapé esquerdo da placa ======= -->
+    <g transform="translate(128,496)" filter="url(#softShadow)">
+      <use href="#seal" width="92" height="92"/>
+    </g>
+
+    <!-- ======= Rodapé “United States Patent” (faixa) ======= -->
+    <g transform="translate(120,584)">
+      <rect x="0" y="0" width="280" height="40" rx="6" fill="#141414" opacity="0.95"/>
+      <use href="#textLine" x="30" y="12" width="220" height="10"/>
+    </g>
+  </g>
+</svg>
